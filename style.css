@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Sometype+Mono&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sometype Monon', monospace;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgba(159, 44, 44, 0.82);
+}
+body h1{
+    position: fixed;
+    justify-content: center;
+    padding: 7px;
+    margin-bottom: 510px;
+    color: white;
+    opacity: 0.85;
+    background-color: #9b0b0b;
+    border-radius: 10px;
+    outline: 1px solid #fff;
+}
+/* ------------------------ WRAPPER ------------------------ */
+.wrapper{
+    width: 770px;
+    padding: 35px;
+    margin-top: 100px;
+    background: white;
+    border-radius: 10px;
+    outline: 1px solid #000000;
+}
+.wrapper .input-field{
+    z-index: -999;
+    opacity: 0;
+    position: absolute;
+}
+.wrapper .content-box{
+    padding: 13px 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+/* ------------------------ TYPING TEXT ------------------------ */
+
+.typing-text::-webkit-scrollbar{
+    width: 0;
+}
+.typing-text{
+    font-size: 21px;
+    text-align: justify;
+    letter-spacing: 1px;
+    word-break: break-all;
+}
+.typing-text p span{
+    position: relative;
+}
+.typing-text p span.correct{
+    color: #03bd05;
+}
+.typing-text p span.incorrect{
+    color: #e31515;
+    background: rgba(232, 143, 143, 0.28);
+    outline: 1px solid #fff;
+}
+.typing-text p span.active{
+    color: #000000;
+}
+.typing-text p span.active::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    opacity: 0;
+    background-color: #040607;
+    animation: blink 1s alternate infinite;
+}
+@keyframes blink {
+    50%{
+        opacity: 1;
+    }
+}
+
+/* ------------------------ CONTENT BOX + BUTTON ------------------------ */
+
+.content-box .typing-text{
+    max-height: 255px;
+    overflow-y: auto;
+}
+.content-box .content{
+    display: flex;
+    margin-top: 17px;
+    padding: 12px 0;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    justify-content: space-between;
+}
+.content-box .result-stats{
+    display: flex;
+    width: calc(100% - 140px);
+    justify-content: space-between;
+}
+.content button{
+    border: none;
+    outline: none;
+    width: 105px;
+    padding: 8px 0;
+    cursor: pointer;
+    color: #fdfdfd;
+    font-size: 16px;
+    border-radius: 5px;
+    background: #9c0b0b;
+    transition: transform 0.5s ease;
+}
+.content button:active{
+    transform: scale(0.90);
+}
+
+/* ------------------------ RESULT STATS ------------------------ */
+
+.result-stats  li{
+    display: flex;
+    height: 22px;
+    list-style: none;
+    align-items: center;
+}
+.result-stats li:not(:first-child){
+    padding-left: 22px;
+    border-left: 1px solid #ccc
+}
+.result-stats  li p{
+    font-size: 19px;
+}
+.result-stats  li span{
+    display: block;
+    font-size: 20px;
+    margin-left: 10px;
+}
+.result-stats  li:not(:first-child) span{
+    font-weight: 500;
+}
+.result-stats  li b{
+    font-weight: 500;
+}
